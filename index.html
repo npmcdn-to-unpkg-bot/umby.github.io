@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>How Stackoverflow Is Used By The Technical Community
+</title>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawTitleSubtitle);
+
+function drawTitleSubtitle() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Aggregate User Count', 'Annual User Increase'],
+        ['2008',  21720, 21720],
+        ['2009',  100121, 78401],
+        ['2010',  301342, 201221],
+        ['2011',  663232, 361890],
+        ['2012',  1387024, 723792],
+        ['2013',  2517472, 1130448],
+        ['2014',  3703018, 1185546],
+        ['2015',  4972330, 1269312]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Annual Growth in Users @ Stack Overflow',
+          subtitle: 'Based Unique User Account ID Created in Calendar Year'
+        },
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'Year'
+        },
+        bars: 'horizontal'
+      };
+      var material = new google.charts.Bar(document.getElementById('chart_div'));
+      material.draw(data, options);
+    }
+</script>
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Introduction</a>
+            </div>
+
+           
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#users">Users</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#qa">Questions/Answers</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#awards">Top Contributors</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <section id="intro" class="intro-section">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Introduction</h1>
+                    <p><strong>Since launching in 2008, Stack Overflow has become the primary destination for support in the developer community. Along with the proliferation of the tech industry, there has been an increasing demand for developers, many of whom have chosen to fast-track their career path with online self-help in lieu of traditional computer science degrees. This is evident in Stack Overflow's Growth</strong></p><br>
+                    <div id="chart_div" ></div>
+                        <br><p><strong>So how does Stack Overflow work? Stack Overflow is a community of users who post questions and answers spanning various programming topics. Ultimately, both groups are vetted through a communal system of qualification: users accumulate reputation and posts are voted up or down.</strong></p>
+                        <br><p><code>UP/DOWN VOTES</code>: how the community indicates which questions and answers are most useful and appropriate or which questions and answers are least useful. When you vote up or down, you are nudging that content "up" or down" the page, so it will be seen by more or fewer people. These votes have the effect of increasing or decreaseing the <code>reputation</code>of the person behind the post<br><br>
+                        <code>REPUTATION</code>: rough measurement of how much the community trusts you; it is earned by convincing your peers that you know what you’re talking users. Basic use of the site, including asking questions, answering, and suggesting edits, does not require any reputation at all. But the more reputation you earn, the more privileges you gain. The primary way to gain reputation is by posting good questions and useful answers. Votes on these posts cause you to gain (or sometimes lose) reputation.</p>
+                        
+
+                     
+                        <a class="btn btn-default page-scroll" href="#users">Drill Down to Last Week's Activity</a>
+                    
+                        <br>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- users Section -->
+    <section id="users" class="users-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Who is Using StackOverflow?</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- qa Section -->
+    <section id="qa" class="qa-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>What is Being Asked & Answered?</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- awards Section -->
+    <section id="awards" class="awards-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Which Users Are Most Active?</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+ 
+</body>
+
+</html>
