@@ -33,7 +33,7 @@ html {
     height: 100%;
     padding-top: 50px;
     text-align: center;
-    background: #eee;
+    background: #fff;
 }
 
 .qa-section {
@@ -43,9 +43,9 @@ html {
     background: #fff;
 }
 
-.awards-section {
+.activity-section {
     height: 100%;
     padding-top: 50px;
     text-align: center;
-    background: #eee;
+    background: #fff;
 }
