@@ -1,46 +1,80 @@
-<html>
-  <head>
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+     </style>
+    </head>
+    <body>
+        <script type="text/javascript">
 
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
+            var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+                            11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+            d3.select("body").selectAll("div")
+                .data(dataset)
+                .enter()
+                .append("div")
+                .attr("class", "bar")
+                .style("height", function(d) {
+                    var barHeight = d * 5;
+                    return barHeight + "px";
+                });
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
+            var w = 500;
+            var h = 100;
+            var barPadding = 1;
 
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ]);
+            //create SVG element
+            var svg = d3.select("body")
+                .append("svg")
+                .attr("width",w)
+                .attr("height",h);
 
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
-                       'height':300};
+            svg.selectAll("rect")
+                .data(dataset)
+                .enter()
+                .append("rect")
+                .attr("x",function(d,i){
+                    return i *(w / dataset.length - barPadding);
+                })
+                .attr("y",function(d){
+                    return h-(d*4);
+                })
+                .attr("width",20)
+                .attr("height",function(d){
+                    return d*4;
 
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
+                })
+                .attr("fill", function(d) {
+                    return "rgb(0, 0, " + (d * 10) + ")";
+                });
 
-  <body>
-    <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
-  </body>
-</html>
+            svg.selectAll("text")
+                .data(dataset)
+                .enter()
+                .append("text")
+                .text(function(d){
+                    return d;
+                })
+                .attr("x", function(d, i) {
+                    return i * (w / dataset.length)+(w / dataset.length - barPadding) / 2;
+               })
+               .attr("y", function(d) {
+                    return h - (d * 4)+14;
+               })
+               .attr("font-family","sans-serif")
+               .attr("font-size","11px")
+               .attr("text-anchor","middle")
+               .attr("fill","white");
+
+
+            var w = 500;
+            var h = 50;
+            var svg = d3.select("body")
+                .append("svg")
+                .attr("width", w)
+                .attr("height", h);
+
+            var dataset = [ 5, 10, 15, 20, 25 ];
+
+            var circles = svg.selectAll("circle")
+                .data(dataset)
+                .enter()
+                .append("circle");
+            
