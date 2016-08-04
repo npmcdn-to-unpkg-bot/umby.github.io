@@ -29,7 +29,15 @@ html {
     background: #fff;
 }
 
+
 .users-section {
+    height: 100%;
+    padding-top: 50px;
+    text-align: center;
+    background: #fff;
+}
+
+.timing-section {
     height: 100%;
     padding-top: 50px;
     text-align: center;
