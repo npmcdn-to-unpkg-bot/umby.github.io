@@ -12,6 +12,16 @@ p {
     text-align:left;
 }
 
+.resize {
+    width: 10px;
+    height: auto;
+    float: right;
+    display: block;
+    margin: auto;
+    width: 10%;
+}
+
+
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
