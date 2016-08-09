@@ -13,12 +13,11 @@ p {
 }
 
 .resize {
-    width: 10px;
-    height: auto;
+    width: 5px;
+ 
     float: right;
-    display: block;
     margin: auto;
-    width: 10%;
+    width: 5%;
 }
 
 
@@ -42,7 +41,6 @@ p {
     text-align: center;
     background: #fff;
 }
-
 
 .users-section {
     height: 100%;
