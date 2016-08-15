@@ -86,7 +86,7 @@ function millisecondsToStr (milliseconds) {
        }
 
   function openWindowFunction(d) {
-	var win = window.open('http://stackoverflow.com/questions/'+d.Id, '_blank');
+  var win = window.open('http://stackoverflow.com/questions/'+d.Id, '_blank');
 if (win) {
     //Browser has allowed it to be opened
     win.focus();
@@ -117,7 +117,7 @@ millisecondsToStr(quartiles[2]) +  '</span><br><span style="color:' + color +
 '">Median</span></span><span style="color:#DDDDDD;" > : ' + 
 millisecondsToStr(quartiles[1]) +  '</span><br><span style="color:' + color + 
 '">1st Quartile</span></span><span style="color:#DDDDDD;" > : ' 
-                         + millisecondsToStr(quartiles[0]) + '</span>';
+                         + millisecondsToStr(quartiles[0]) + '</span><br> (click to see individual points)';
           return message;
        }
        events.box.mouseover = tipBox.show;
@@ -134,9 +134,9 @@ var arrayLength = Tags.length
 for (var i = 0; i < arrayLength; i++) {
 Tag = Tags[i]
             var opt = document.createElement('option');
-            opt.value = Tag.key
-            opt.innerHTML = Tag.key + ": " + Tag.values
-            if (Tag.key == "python" || Tag.key == "java"){
+            opt.value = Tag.Name
+            opt.innerHTML = Tag.Name + " (" + Tag.Count +")"
+            if (Tag.Name == "python" || Tag.Name == "java"){
                opt.selected = "selected";
             }
            select.appendChild(opt);
@@ -188,6 +188,26 @@ return 1
    boxPlotFunctions.defaultDistribution = defaultDistribution;
 
    function defaultDistribution(tooltip) {
+    d3.csv("TagCounts.csv",function(error,Tags){
+        if (error) throw error;
+        populateTagsSelect(Tags)
+$('#TagsSelect').multiselect({
+  includeSelectAllOption: true,
+  selectAllText: "Clear All",
+              maxHeight: 400,
+            enableCaseInsensitiveFiltering: true,
+  onChange:function() { 
+  var filtereddata = filterdata(data )
+            boxPlotFunctions.xbp.data(filtereddata);
+            boxPlotFunctions.xbp.update();
+         
+      },
+ onSelectAll: function() {
+$('#TagsSelect').multiselect("deselectAll",true)
+        }
+
+    }
+      )
       var default_distributions = 'PostDurations.json';
       var container = d3.select('#pointDistributions');
 
@@ -198,25 +218,9 @@ return 1
                   var xbp = explodingBoxplot();
          boxPlotFunctions.xbp = xbp;
 
-         Tags = d3.nest()
-         .key(function(d) { return d.Tag; })
-         .rollup(function(d){return d.length})
-         .entries(result).filter(function(d){
-return d.values > 10
-          }).sort(
-          function(a,b) {
-          return b.values-a.values; })
+
          data = d3.shuffle(result)
-         populateTagsSelect(Tags)
-$('#TagsSelect').multiselect({
-              maxHeight: 400,
-            enableCaseInsensitiveFiltering: true,
-  onChange:function() { 
-  var filtereddata = filterdata(data )
-            boxPlotFunctions.xbp.data(filtereddata);
-            boxPlotFunctions.xbp.update();
-         
-      }})
+
 
          if (tooltip) {
             if (tooltip == 'popover') xbp.events({ 'point': { 'mouseover': showTooltip, 'mouseout': removeTooltip } });
@@ -246,7 +250,9 @@ var filtereddata =  filterdata()
          xbp.update();
 
       });
-   }
+   
+   });
+  }
 
    boxPlotFunctions.demoSetup = demoSetup;
    function demoSetup() {
@@ -264,7 +270,6 @@ var filtereddata =  filterdata()
          var filtereddata =  filterdata()
          boxPlotFunctions.xbp.data(filtereddata );
          boxPlotFunctions.xbp.update();      
-         boxPlotFunctions.xbp.update();
       });
 
       var row14 = viztable.append('tr').append('td').attr('align', 'left');
@@ -313,7 +318,6 @@ var filtereddata =  filterdata()
          boxPlotFunctions.xbp.data(filtereddata );
          boxPlotFunctions.xbp.update();      });
 
-//      var row6 = viztable.append('tr').append('td').append('hr');
 
      var row7 = viztable.append('tr').append('td').attr('align', 'left');
       row7.append('label').html('&nbsp; Sample Size').style('font-size', '12px');
@@ -326,10 +330,12 @@ var filtereddata =  filterdata()
          boxPlotFunctions.xbp.data(filtereddata );
          boxPlotFunctions.xbp.update();
       });
+      var row6 = viztable.append('tr').append('td')
+      row6.attr('align', 'left').html('(High sample sizes may reduce performance)').style('font-size', '10px');
 
       var row12 = viztable.append('tr').append('td').append('hr');
-      var row13 = viztable.append('tr').append('td').attr('align', 'left')
-                          .html('Explode: click on boxes<br/>Reset: double-click background');
+      var row13 = viztable.append('tr').append("div").attr("id","rcorners").append('td').attr('align', 'left')
+                          .html('Expand: click on boxes<br/>Reset: double-click background');
 
    }
 
