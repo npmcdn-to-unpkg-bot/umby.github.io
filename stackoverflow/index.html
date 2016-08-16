@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hack Overflow: Stack Overflow Productivity Hacks</title>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
+    <!--fontawesome-->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans' rel='stylesheet' type='text/css'>
+    <!-- Custom CSS -->
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawTitleSubtitle);
+
+function drawTitleSubtitle() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Aggregate User Count (Total No. of User Accounts)', 'Annual User Increase (No. of New Accounts Created During Year'],
+        ['2008',  21720, 21720],
+        ['2009',  100121, 78401],
+        ['2010',  301342, 201221],
+        ['2011',  663232, 361890],
+        ['2012',  1387024, 723792],
+        ['2013',  2517472, 1130448],
+        ['2014',  3703018, 1185546],
+        ['2015',  4972330, 1269312]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Annual Growth in Users @ Stack Overflow',
+          subtitle: 'Based Unique User Account ID Created in Calendar Year'
+        },
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'Year'
+        },
+        bars: 'horizontal'
+      };
+      var material = new google.charts.Bar(document.getElementById('chart_div'));
+      material.draw(data, options);
+    }
+</script>
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand page-scroll" href="#page-top">INTRODUCTION</a>
+            </div>
+
+           
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#first">User Analysis</a>
+                    </li>
+
+                                        <li>
+                        <a class="page-scroll" href="#timing">Activity Timing</a>
+                    </li>
+
+                    <li>
+                        <a class="page-scroll" href="#users">Time to Answer</a>
+                    </li>
+
+
+                    <li>
+                        <a class="page-scroll" href="#qa">Time to No Answer</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#activity">Activity Trends</a>
+                    </li>
+
+
+                </ul>
+                <img class="resize" src="img/logo.png"/>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <section id="intro" class="intro-section">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>What is Stack Overflow?</h2>
+
+                    <p><strong>Stack Overflow </strong> is a question and answer site for professional and enthusiast programmers.</p>
+                    <p>Since launching in 2008, Stack Overflow has become the primary destination for support in the developer community. Along with the proliferation of the tech industry, there has been an increasing demand for developers, many of whom have chosen to fast-track their career path with online self-help in lieu of traditional computer science degrees. This is evident in Stack Overflow's Growth</p>
+                    <br><br><br>
+                    <div id="chart_div"></div>
+                    <br><br><br><br><br> <br><br><br><br><br> <br><br><br><br>
+               
+                    <!--<p><strong>How does Stack Overflow work? Stack Overflow is a community of users who post questions and answers spanning various programming topics. Ultimately, both groups are vetted through a communal system of qualification: users accumulate reputation and posts are voted up or down.</strong></p>
+                    <br>
+                    <p><code>UP/DOWN VOTES</code>: how the community indicates which questions and answers are most useful and appropriate or which questions and answers are least useful. When you vote up or down, you are nudging that content "up" or down" the page, so it will be seen by more or fewer people. These votes have the effect of increasing or decreasing the <code>reputation</code>of the person behind the post
+                        <br><br>
+                    <code>REPUTATION</code>: rough measurement of how much the community trusts you; it is earned by convincing your peers that you know what you’re talking about. Basic use of the site, including asking questions, answering, and suggesting edits, does not require any reputation at all. But the more reputation you earn, the more privileges you gain. The primary way to gain reputation is by posting good questions and useful answers. Votes on these posts cause you to gain (or sometimes lose) reputation.</p>
+
+                    <p><strong>So we've seen HOW Stack Overflow has grown and HOW the community works, but in order to learn more about HOW it is used, we will zoom in to the activity of a recent week (Jun 06 - Jun 13) to get deeper insights on the WHO, WHAT, & WHERE.</strong></p>
+                        <i>
+                     
+                        <a class="btn btn-default page-scroll" href="#users">Click to Begin Exploring Who, What, & Where</a>
+                    </i>
+                        <br> 
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id ="fundamentals" class="section-padding">-->
+      <div class="container">
+        <div class="row">
+          <div class="header-section text-center">
+            <h2>How Does it Work?</h2>
+            <p>Stack Overflow is a community of users who post questions and answers spanning various programming topics. Ultimately, both groups are vetted through a communal system of qualification: users accumulate reputation and posts are voted up or down. Hover over the below components to learn more:</p>
+            <hr class="bottom-line">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-sm-6 padleft-right">
+            <figure class="imghvr-fold-up">
+              <img src="img/questions.png" class="img-responsive">
+              <figcaption>
+                  <h3>Questions</h3>
+                  <p>Get answers to practical, detailed questions. Focus on questions about an actual problem you have faced. Include details about what you have tried and exactly what you are trying to do.</p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <div class="col-md-5 col-sm-6 padleft-right">
+            <figure class="imghvr-fold-up">
+              <img src="img/tags.png" class="img-responsive">
+              <figcaption>
+                  <h3>Tags</h3>
+                  <p>Tags make it easy to find interesting questions. All questions are tagged with their subject areas. Each can have up to 5 tags, since a question might be related to several subjects.</p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <!--<div class="col-md-4 col-sm-6 padleft-right">
+            <figure class="imghvr-fold-up">
+              <img src="img/course03.jpg" class="img-responsive">
+              <figcaption>
+                  <h3>Course Name</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div> -->
+          <div class="col-md-5 col-sm-6 padleft-right">
+            <figure class="imghvr-fold-up">
+              <img src="img/answers.png" class="img-responsive">
+              <figcaption>
+                  <h3>Answers</h3>
+                  <p>Good answers are voted up and rise to the top. The best answers show up first so that they are always easy to find.</p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <div class="col-md-5 col-sm-6 padleft-right">
+            <figure class="imghvr-fold-up">
+              <img src="img/reputation.png" class="img-responsive">
+              <figcaption>
+                  <h3>Reputation</h3>
+                  <p>Your reputation score goes up when others vote up your questions, answers and edits. Reputation is a carefully calculated rough measurement of how your own answers, questions, edits and documentation are received by the community. Note that “down votes” decrease one’s reputation. This maintains a system of checks & balances on those who would indiscrimately down-vote other posts without basis</p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+      </div>
+      <br><br><br><br>
+                    <!-- Custom CSS <p>In order to learn <code>HOW</code> to hack your success in this community, we will zoom in to the activity of a single week (Jun 06 - Jun 13) to generate actionable insights from trends in activity.</strong></p>-->
+                        <i>
+                     
+                        
+                    </i>
+                        <br>     <br><br><br><br>    <br><br><br><br> <br><br><br><br>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+          <!--
+          <div class="col-md-4 col-sm-6 padleft-right">
+            <figure class="imghvr-fold-up">
+              <img src="img/course06.jpg" class="img-responsive">
+              <figcaption>
+                  <h3>Course Name</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/ Courses-->
+
+    <!-- timing Section -->
+    <section id="first" class="first-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Who Are These Users</h1>
+                    <h3></h3> 
+                    <div style="margin: 0 auto; width:560px; height:600px;">
+                        <object type="text/html" data="stackoverflow.userbarcharts.v3.html" style="width:100%; height:100%; margin:1%;">
+                        </object><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- timing Section -->
+    <section id="timing" class="timing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>When are Users Accessing Stack Overflow?</h1>
+                    <h3>Hack #1: Knowing The Perfect Time To Ask a Question</h3> 
+                    <div style="margin: 0 auto; width:100%; height:600px;">
+                        <object type="text/html" data="heat2.html" style="width:100%; height:100%; margin:1%;">
+                        </object><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- users Section -->
+
+    <section id="users" class="users-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Likelihood of Receiving an Answer Based on Question's Age</h1>
+                    <h3>Hack #2: Knowing Exactly How Long To Wait</h3> 
+                        <div style="margin: 0 auto; width:100%; height:600px;">
+                        <object type="text/html" data="boxplot.html" style="width:100%; height:100%; margin:1%;">
+                        </object><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- qa Section -->
+    <section id="qa" class="qa-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>What is Being Asked & Answered?</h1>
+                    <h3>Hack #3: Knowing When To Give Up on Waiting</h3>
+                        <div style="margin: 0 auto; width:100%; height:600px;">
+                        <object type="text/html" data="areachart.html" style="width:100%; height:100%; margin:1%;">
+                        </object>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- activity Section -->
+    <section id="activity" class="activity-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                <h1>Where is the Most Activity?</h1>
+                <h3>Hack #4: Maximize Success By Targeting Popular Topics/Tags & Asking Better Quality Questions</h3>
+                </div>
+                <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+                <div class='tableauPlaceholder' style='width: 1300px; height: 736px;'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StackOverflow&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1300' height='736' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='StackOverflow&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StackOverflow&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+ 
+</body>
+
+</html>
