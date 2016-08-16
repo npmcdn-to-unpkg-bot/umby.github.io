@@ -23,6 +23,13 @@ p {
 .imghvr-fold-up {
    padding:3px;
    border:1px solid #021a40;
+   align:center;
+}
+
+.growth {
+   padding:3px;
+   border:1px solid #021a40;
+   align:center;
 }
 
 @media(min-width:767px) {
@@ -40,6 +47,14 @@ p {
 
 
 .intro-section {
+    height: 125%;
+    padding-top: 100px;
+    text-align: center;
+    background: #fff ;
+    display: block;
+}
+
+.first-section {
     height: 125%;
     padding-top: 100px;
     text-align: center;
